@@ -977,7 +977,7 @@
         function formatBytes(bytes, decimals = 2) {
             if (bytes === 0) return '0 بایت';
             const k = 1024;
-            const sizes = ['بایت', 'کیلوبایت', 'مگابایت', 'گیگابایت', 'ترابایت'];
+            const sizes = ['بایت', 'کیلوبایت', 'مگابایت', 'GB', 'ترابایت'];
             const i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(k));
             const result = (Math.abs(bytes) / Math.pow(k, i)).toFixed(decimals);
             return parseFloat(result) * Math.sign(bytes) + ' ' + sizes[i];
@@ -1069,8 +1069,8 @@
             
             // Format and set values with a typing animation effect
             animateValue(usedValueEl, formatBytes(usedBytes));
-            animateValue(remainingValueEl, totalByte === 0 ? 'نامحدود' : formatBytes(remainingBytes));
-            animateValue(totalValueEl, totalByte === 0 ? 'نامحدود' : formatBytes(totalByte));
+            animateValue(remainingValueEl, totalByte === 0 ? 'ilimitado' : formatBytes(remainingBytes));
+            animateValue(totalValueEl, totalByte === 0 ? 'ilimitado' : formatBytes(totalByte));
         }
         
         // Animate value with typing effect
@@ -1097,7 +1097,7 @@
             const statusElement = document.getElementById('statusValue');
 
             if (expireValue === '0') {
-                expireDateElement.textContent = 'نامحدود';
+                expireDateElement.textContent = 'ilimitado';
             } else {
                 const expireDate = new Date(expireTimestamp);
                 const gy = expireDate.getFullYear();
@@ -1114,13 +1114,13 @@
             const usedBytes = downloadByte + uploadByte;
 
             if (totalByte === 0) {
-                statusElement.textContent = 'فعال';
+                statusElement.textContent = 'Activo';
                 statusElement.style.color = '#10b981';
             } else if (expireTimestamp >= Date.now() && usedBytes <= totalByte) {
-                statusElement.textContent = 'فعال';
+                statusElement.textContent = 'Activo';
                 statusElement.style.color = '#10b981';
             } else {
-                statusElement.textContent = 'غیرفعال';
+                statusElement.textContent = 'desactivado';
                 statusElement.style.color = '#ef4444';
             }
         }
