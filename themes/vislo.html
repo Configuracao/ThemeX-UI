@@ -851,8 +851,8 @@
             <div class="logo">
                 <i class="fas fa-shield-alt"></i>
             </div>
-            <h1 class="title">پنل اشتراک</h1>
-            <p class="subtitle">شناسه: {{ .sId }}</p>
+            <h1 class="title">Panel de suscripción</h1>
+            <p class="subtitle">ID: {{ .sId }}</p>
         </header>
 
         <!-- Stats Grid -->
@@ -862,7 +862,7 @@
                     <i class="fas fa-download"></i>
                 </div>
                 <div class="stat-value" id="downloadValue">{{ .download }}</div>
-                <div class="stat-label">دانلود</div>
+                <div class="stat-label">Bajada</div>
             </div>
 
             <div class="stat-card">
@@ -870,7 +870,7 @@
                     <i class="fas fa-upload"></i>
                 </div>
                 <div class="stat-value" id="uploadValue">{{ .upload }}</div>
-                <div class="stat-label">آپلود</div>
+                <div class="stat-label">Subida</div>
             </div>
 
             <div class="stat-card">
@@ -878,7 +878,7 @@
                     <i class="fas fa-calendar-alt"></i>
                 </div>
                 <div class="stat-value" id="expireValue"></div>
-                <div class="stat-label">تاریخ انقضا</div>
+                <div class="stat-label">Fecha de expiración</div>
             </div>
 
             <div class="stat-card">
@@ -886,14 +886,14 @@
                     <i class="fas fa-check-circle"></i>
                 </div>
                 <div class="stat-value" id="statusValue"></div>
-                <div class="stat-label">وضعیت</div>
+                <div class="stat-label">Estado</div>
             </div>
         </div>
 
         <!-- Usage Section -->
         <section class="usage-section">
             <div class="usage-header">
-                <h2 class="usage-title">میزان استفاده</h2>
+                <h2 class="usage-title">tasa de uso</h2>
             </div>
             <div class="usage-container">
                 <div class="usage-visual">
@@ -910,7 +910,7 @@
                         </svg>
                         <div class="usage-meter-text">
                             <div class="usage-meter-value" id="usagePercentage">0%</div>
-                            <div class="usage-meter-label">استفاده شده</div>
+                            <div class="usage-meter-label">usado</div>
                         </div>
                     </div>
                 </div>
@@ -919,61 +919,30 @@
                         <div class="usage-detail-value" id="usedValue"></div>
                         <div class="usage-detail-label">
                             <i class="fas fa-chart-pie usage-detail-icon"></i>
-                            <span>استفاده شده</span>
+                            <span>usado</span>
                         </div>
                     </div>
                     <div class="usage-detail">
                         <div class="usage-detail-value" id="remainingValue"></div>
                         <div class="usage-detail-label">
                             <i class="fas fa-database usage-detail-icon"></i>
-                            <span>باقی مانده</span>
+                            <span>restan</span>
                         </div>
                     </div>
                     <div class="usage-detail">
                         <div class="usage-detail-value" id="totalValue"></div>
                         <div class="usage-detail-label">
                             <i class="fas fa-server usage-detail-icon"></i>
-                            <span>کل حجم</span>
+                            <span>total</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- QR Section -->
-        <section class="qr-section">
-            <h2 class="usage-title">کد QR</h2>
-            <p style="color: #94a3b8; margin-bottom: 1rem;">برای وارد کردن پیکربندی اسکن کنید</p>
-            <div class="qr-container">
-                <canvas id="qrcode" width="200" height="200"></canvas>
-            </div>
-        </section>
-
-        <!-- Connections Section -->
-        <section class="connections-section">
-            <div class="section-header" onclick="toggleConnections()">
-                <h2 class="section-title">جزئیات اتصال</h2>
-                <i class="fas fa-chevron-down toggle-icon" id="toggleIcon"></i>
-            </div>
-            <div class="connections-content" id="connectionsContent">
-                <button class="app-btn" onclick="copyAllConnections()" style="margin-bottom: 1rem;">
-                    <i class="fas fa-copy"></i>
-                    کپی همه
-                </button>
-                {{ range .result }}
-                <div class="connection-item">
-                    <span class="connection-text">{{ . }}</span>
-                    <button class="copy-btn" onclick="copyToClipboard('{{ . }}')">
-                        <i class="fas fa-copy"></i>
-                    </button>
-                </div>
-                {{ end }}
-            </div>
-        </section>
-
         <!-- Support Section -->
         <section class="support-section">
-            <h2 class="usage-title">پشتیبانی</h2>
+            <h2 class="usage-title">Apoyo</h2>
             <p style="color: #94a3b8; margin-bottom: 1.5rem;">Contáctanos para recibir asistencia o adquirir una nueva configuración.</p>
             <div class="support-buttons">
                 <a href="https://t.me/Al3xv1p" target="_blank" class="support-btn">
