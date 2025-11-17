@@ -961,7 +961,7 @@
         function formatBytes(bytes, decimals = 2) {
             if (bytes === 0) return '0 بایت';
             const k = 1024;
-            const sizes = ['بایت', 'کیلوبایت', 'مگابایت', 'GB', 'ترابایت'];
+            const sizes = ['بایت', 'KB', 'مگابایت', 'GB', 'ترابایت'];
             const i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(k));
             const result = (Math.abs(bytes) / Math.pow(k, i)).toFixed(decimals);
             return parseFloat(result) * Math.sign(bytes) + ' ' + sizes[i];
