@@ -959,9 +959,9 @@
 
         // Format bytes
         function formatBytes(bytes, decimals = 2) {
-            if (bytes === 0) return '0 بایت';
+            if (bytes === 0) return '0 byte';
             const k = 1024;
-            const sizes = ['بایت', 'KB', 'مگابایت', 'GB', 'ترابایت'];
+            const sizes = ['byte', 'KB', 'megabyte', 'GB', 'terabyte'];
             const i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(k));
             const result = (Math.abs(bytes) / Math.pow(k, i)).toFixed(decimals);
             return parseFloat(result) * Math.sign(bytes) + ' ' + sizes[i];
@@ -971,9 +971,9 @@
         async function copyToClipboard(text) {
             try {
                 await navigator.clipboard.writeText(text);
-                showToast('کپی شد!', 'success');
+                showToast('¡Copiado!', 'success');
             } catch (err) {
-                showToast('خطا در کپی کردن', 'error');
+                showToast('Error al copiar', 'error');
             }
         }
 
